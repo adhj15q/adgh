@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cool place</title>
+    <link rel="icon" type="image/png" href="https://imgur.com/kyHcX4M.png">
+    <style>
+        /* Global Reset */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2rem;
+        }
+
+        /* Navigation Styles */
+        nav {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #ffd700;
+        }
+
+        /* Hero Section Styles */
+        .hero {
+            background-image: url('web.PNG');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            text-align: center;
+            padding: 100px 0;
+            height: 100vh; /* 풀스크린 높이 */
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        /* Content Section Styles */
+        .content {
+            padding: 50px;
+            text-align: center;
+        }
+
+        .content h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 1rem;
+        }
+
+        /* Play/Pause Button Styles */
+        #playPauseBtn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Responsive Styles */
+        @media(max-width: 768px) {
+            header h1 {
+                font-size: 1.5rem;
+            }
+
+            nav ul li a {
+                font-size: 1rem;
+            }
+
+            .hero {
+                padding: 50px 0;
+            }
+
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .content h3 {
+                font-size: 1.5rem;
+            }
+
+            .content p {
+                font-size: 1rem;
+            }
+
+            /* Adjust button size for smaller screens */
+            #playPauseBtn {
+                width: 50px;
+                height: 50px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Cool place</h1>
+        <nav>
+            <ul>
+                <li><a href="https://adgh1.netlify.app/" target="_blank">웹 만드는법</a></li>
+                <li><a href="https://adgh3.netlify.app/" target="_blank">웹 소개</a></li>
+                <li><a href="https://adgh2.netlify.app/" target="_blank">고객센터</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div>
+            <h2>저의 웹사이트에 오신걸 환영합니다.</h2>
+            <p>밑에 버튼 클릭</p>
+            <button onclick="window.open('https://www.youtube.com/embed/FlwMt88dXSs?si=Kstk3UAv21DPnBDR', '_blank');">영상 보기</button>
+        </div>
+    </section>
+        
+    <section class="content">
+        <div>
+            <h3>KOREA 웹사이트</h3>
+            <p>저의 웹사이트는 편리와간편성을 추구하는 웹사이트입니다.</p>
+        </div>
+
+        <div>
+            <p>화면 빈 곳에 우클릭을 누르시고 번역하시면 이해하시는데 더 편합니다.</p>
+            <p><h5>&copy; 2024 Cool place web</h5></p>
+        </div>
+    </section>
+
+    <!-- Play/Pause Button -->
+    <button id="playPauseBtn">노래시작</button>
+
+    <!-- Background Music -->
+    <audio id="bgMusic" src="bgm.mp3" loop autoplay></audio>
+
+    <!-- Script for Play/Pause Button -->
+    <script>
+        var bgMusic = document.getElementById("bgMusic");
+        var playPauseBtn = document.getElementById("playPauseBtn");
+        
+        playPauseBtn.addEventListener("click", function() {
+            if (bgMusic.paused) {
+                bgMusic.play();
+                playPauseBtn.textContent = "❚❚";
+            } else {
+                bgMusic.pause();
+                playPauseBtn.textContent = "▶";
+            }
+        });
+    </script>
+
+</body>
+</html>
